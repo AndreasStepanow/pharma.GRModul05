@@ -1,0 +1,105 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:table="sap.ui.table" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:ctrl="de.arvato.GRModul01.control">
+
+	<f:Form id="idRoughGoodsReceipt" editable="true">
+		<f:layout>
+			<f:ResponsiveGridLayout labelSpanXL="4"
+				labelSpanL="4" labelSpanM="12" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+				emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1"
+				columnsM="1" singleContainerFullSize="false" />
+		</f:layout>
+
+		<f:formContainers>
+
+			<f:FormContainer title="">
+				<f:formElements>
+
+					<!--/f:formElements> </f:FormContainer> <f:FormContainer title=""> <f:formElements -->
+
+					<f:FormElement label="{i18n>RoughRG.Location}">
+						<f:fields>
+							<ComboBox id="idLocation"
+								selectionChange="onLocationComboBoxSelectionChange"
+								items="{ path: 'app>/Locations', sorter: { path: 'Name' }, constrains : {}}">
+								<core:Item key="{app>Name}"
+									text="{app>Descr}">
+								</core:Item>
+							</ComboBox>
+
+							<!--ComboBox id="idLocation" selectionChange="onLocationComboBoxSelectionChange" 
+								items="{ path: 'erp>/LocationSet'}"> 
+								<core:Item key="{erp>LocID}" text="{erp>LocID} {erp>LocName}"> </core:Item> 
+								</ComboBox-->
+
+						</f:fields>
+					</f:FormElement>
+
+					<f:FormElement label="{i18n>RoughGR.Client}">
+						<f:fields>
+							<ComboBox id="idSapClientComboBox"
+								selectionChange="onClientSelectionChange"
+								items="{ path: 'app>/SapClients',										
+										sorter: { path: 'Mandt' },								 		 
+										constrains : {}}">
+								<core:Item
+									key="{path: 'app>Mandt', type: 'sap.ui.model.type.String' }"
+									text="{app>Mandt} {app>Mtext}" />
+							</ComboBox>
+
+						</f:fields>
+					</f:FormElement>
+
+					<f:FormElement label="{i18n>RoughRG.Notification}">
+						<f:fields>
+							<ComboBox id="idNotification"
+								selectionChange="onSelectingNotification"
+								items="{ path: 'app>/Notifications', sorter: { path: 'Name' },								 		
+										constrains : {}}">
+								<core:Item key="{app>Name}" text="{app>Descr}" />
+							</ComboBox>
+
+						</f:fields>
+					</f:FormElement>
+					
+					
+
+					<!--f:FormElement label="{i18n>RoughRG.ExtNumber}">
+						<f:fields>							
+							<Input id="idExtNumber" value="{app>/ExtNumber}"
+								width="100%" submit="onExtNumberSubmit">			
+							</Input>
+
+							<List items="{app>/POList}" mode="Delete"
+								delete="onExtNumberDelete">
+								<StandardListItem title="{app>PONumber}" />
+							</List>					
+						</f:fields>
+					</f:FormElement-->
+					
+							<!--ComboBox id="idDocTypeComboBox" width="100px" items="{path: 'erp>/DomainValueSet', 
+								filters: [{path:'Name',operator:'EQ',value1:'ZGWE_DOC_TYPE'}], events: { 
+								dataReceived: '.onDocTypeReceived' }}" selectionChange="onDocTypeSelectionChange"> 
+								<core:Item key="{erp>Value}" text="{erp>Value}" id="idDocTypeComboBoxItem"> 
+								</core:Item> </ComboBox -->
+							<!--/items> </FlexBox -->
+
+				</f:formElements>
+			</f:FormContainer>
+			
+			<f:FormContainer title="{i18n>RoughRG.SpecialOptions}">
+				<f:formElements>							
+					<f:FormElement>
+						<f:fields>						
+							<CheckBox text="{i18n>RoughRG.CreateDummyCheck}" selected="{app>/CreateDummyCheck}" />
+						</f:fields>
+					</f:FormElement>					
+				</f:formElements>
+			</f:FormContainer>
+
+		</f:formContainers>
+	</f:Form>
+</core:FragmentDefinition>
+	

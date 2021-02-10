@@ -1,0 +1,46 @@
+{		
+	"SaveButtonEnabled": true,
+	"ControlEnabled": false,
+	"CreateDummyCheck": false,
+	"User": "?",	
+	"ExtNumber": "",
+	"DocType": "",
+	"Employee": {
+		"ID": "",
+		"User": "",
+		"Name": "",
+		"Lgnum": ""
+	},
+	"Printer":"",
+	"POList": [],
+	"Location": "",
+	"Header": {
+		"expanded": false
+	},
+	"Locations": [],
+	"SapClients":[],
+	"WrongAvis": {
+		"Reason":{
+			"key":"",
+			"other": ""
+		}
+	},
+	"Notifications": [
+		{
+			"Name": "AV",
+			"Descr": "Avisiert",
+			"Color": "greenText"
+		},
+		{
+			"Name": "NA",
+			"Descr": "Nicht avisiert",
+			"Color": "blueText"
+		},
+		{
+			"Name": "WA",
+			"Descr": "Falsch avisiert",
+			"Color": "redText"
+		}
+	],
+	"currentDate": ""
+}
